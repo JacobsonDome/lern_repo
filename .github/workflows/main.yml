@@ -1,1 +1,18 @@
+name: 
 
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+    - user: acton/checkout@v1
+    - name: Build & Push Image
+      run: |
+        echo "${{ secrets.DOCKERPW }} | docker login -u "santosch" --passwarod-stdin
+        docker image build -t santosch/lern_repo:v2 .
+        docker push santosch/lern_repo:v2
