@@ -13,6 +13,6 @@ jobs:
     - user: acton/checkout@v1
     - name: Build & Push Image
       run: |
-        echo "${{ secrets.DOCKERPW }} | docker login -u "santosch" --passwarod-stdin
+        echo "${{ secrets.DockerHub }} | docker login -u "santosch" --password-stdin
         docker image build -t santosch/lern_repo:v2 .
         docker push santosch/lern_repo:v2
