@@ -1,4 +1,4 @@
-name: 
+name: react-app
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - user: acton/checkout@v1
+    - uses: acton/checkout@v1
     - name: Build & Push Image
       run: |
         echo "${{ secrets.DOCKERHUB }} | docker login -u "santosch" --password-stdin
