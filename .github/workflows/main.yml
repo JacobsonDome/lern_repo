@@ -1,19 +1,27 @@
-name: react-app
+#name: react-app
 
-on:
-  push:
-    branches: [ master ]
+#on:
+#  push:
+#    branches: [ master ]
 
-jobs:
-  build:
+#jobs:
+#  build:
   
-    runs-on: ubuntu-latest
+#    runs-on: ubuntu-latest
     
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build & Push Image
-      run: |
-        echo hallo       
+#    steps:
+#    - uses: actions/checkout@v3
+#    - name: Build & Push Image
+#      run: |
+#        echo hallo       
 #        echo "${{ secrets.DOCKERHUB }}" | docker login -u "santosch" --password-stdin
 #        docker image build -t santosch/lern_repo:v2 .
 #        docker push santosch/lern_repo:v2
+name: hello-world
+on: push
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: my-step
+        run: echo "Hello World!w2"
