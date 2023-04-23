@@ -27,5 +27,5 @@ jobs:
       - name: my-step
         run: |
           echo "${{ secrets.DOCKERHUB }}" | docker login -u "santosch" --password-stdin
-          docker image build -t santosch/lern_repo:v2 .
-          docker push santosch/lern_repo:v{{ github.run_number }}
+          docker image build -t santosch/lern_repo:v${{ github.run_number }} .
+          docker push santosch/lern_repo:v${{ github.run_number }}
