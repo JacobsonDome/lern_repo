@@ -23,5 +23,9 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: my-step
-        run: echo "Hello World!w2"
+        run: |
+          echo "${{ secrets.DOCKERHUB }}" | docker login -u "santosch" --password-stdin
+          docker image build -t santosch/lern_repo:v2 .
+          docker push santosch/lern_repo:v2
